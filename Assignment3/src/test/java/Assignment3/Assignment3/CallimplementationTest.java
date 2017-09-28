@@ -5,15 +5,21 @@ import junit.framework.TestCase;
 public class CallimplementationTest extends TestCase {
 	Callimplementation obj;
 int a,b;
+double c,d;
+
+
 	protected void setUp() throws Exception {
 		obj=new Callimplementation();
-		a=10;
-		b=5;
+		a=9;
+		b=2;
+		c=(double)a;
+		d=(double)b;
+		
 		CallInteface mockobj=mock(CallInteface.class);
 		when(mockobj.add(a, b)).thenReturn(a+b);
 		when(mockobj.sub(a, b)).thenReturn(a-b);
 		when(mockobj.mul(a, b)).thenReturn(a*b);
-		when(mockobj.div(a, b)).thenReturn(a/b);
+		when(mockobj.div(a, b)).thenReturn(c/d);
 		
 		obj.setCalI(mockobj);
 		
@@ -22,22 +28,22 @@ int a,b;
 	
 	public void testAddTwoNum() {		
 		
-		assertEquals(15,obj.AddTwoNum(10,5));
+		assertEquals(11,obj.AddTwoNum(9,2));
 		
 	}
 public void testSubTwoNum() {		
 		
-		assertEquals(5,obj.SubTwoNum(10,5));
+		assertEquals(7,obj.SubTwoNum(9,2));
 		
 	}
 public void testMulTwoNum() {		
 	
-	assertEquals(50,obj.MulTwoNum(10,5));
+	assertEquals(18,obj.MulTwoNum(9,2));
 	
 }
 public void testDivTwoNum() {		
 	
-	assertEquals(2,obj.DivTwoNum(10,5));
+	assertEquals(4.5,obj.DivTwoNum(9,2));
 	
 }
 	protected void tearDown() throws Exception {

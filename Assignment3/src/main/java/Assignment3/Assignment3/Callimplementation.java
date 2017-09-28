@@ -17,7 +17,7 @@ public class Callimplementation {
 		
 		return calI.sub(a, b);
 	}
-	public int DivTwoNum(int a,int b)
+	public double DivTwoNum(int a,int b)
 	{
 		return calI.div(a, b);
 		
